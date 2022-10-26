@@ -1,13 +1,10 @@
 import Head from 'next/head';
 import Page from '../layouts/Page';
-import { useColorMode } from '@chakra-ui/react';
 import { Box } from '@chakra-ui/react';
+import ThemeToggler from '../components/ThemeToggler';
 import SearchBar from '../components/SearchBar';
-import { MoonIcon, SunIcon } from '@chakra-ui/icons';
-import { IconButton } from '@chakra-ui/button';
 
 export default function Home() {
-  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Page>
       <Head>
@@ -16,9 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <IconButton mt={4} aria-label="Toggle Mode" onClick={toggleColorMode}>
-          {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-        </IconButton>
+        <ThemeToggler />
       </div>
       <SearchBar />
     </Page>
